@@ -1,4 +1,4 @@
-# voltAgentApp
+# Playwright Test Automation using Volt Agent
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Playwright](https://img.shields.io/badge/Playwright-45ba4b?style=for-the-badge&logo=playwright&logoColor=white)
@@ -6,6 +6,25 @@
 ![Mistral AI](https://img.shields.io/badge/Mistral_AI-5A67D8?style=for-the-badge&logoColor=white)
 
 A multi-agent [VoltAgent](https://github.com/vercel/voltagent) application for browser automation and test generation.
+
+## Multi-Agent Test Automation Architecture
+
+This application demonstrates a powerful approach to Playwright test automation using a coordinated multi-agent system:
+
+1. **Orchestrator Agent**: The main planner that analyzes test requirements, breaks them down into subtasks, and coordinates the execution between specialized agents.
+
+2. **Browser Automation Agent**: Handles all interactions with the web browser - navigation, clicking, typing, extracting data, and taking screenshots. This agent maintains a single browser instance for efficiency.
+
+3. **Code Generation Agent**: Transforms recorded browser actions into maintainable Playwright test scripts in TypeScript, ensuring best practices and proper assertions.
+
+The agents communicate through a context-sharing mechanism, allowing them to pass data and maintain state throughout the test session. When a user provides a natural language instruction like "Test the login flow on example.com," the system:
+
+1. The Orchestrator analyzes the request and creates an execution plan
+2. Browser Agent navigates to the site and performs the required interactions
+3. Code Generation Agent simultaneously records these actions
+4. Generated test code is returned, ready to be saved and integrated into test suites
+
+This architecture allows for a significantly more intuitive testing workflow compared to traditional approaches, supporting both exploratory testing and automated test generation from a single natural language interface.
 
 ## Getting Started
 
